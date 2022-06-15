@@ -1,0 +1,50 @@
+
+
+
+<div class="row" style="padding-top:15px;">
+    <article class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6" ng-repeat="sub in list_subject | limitTo:4:begin" style="padding-bottom: 15px;">
+          <div class="card" style="text-align: center;">
+            <ul class="list-group list-group-flush">
+
+              <li class="list-group-item"><img ng-src="images/logos/{{sub.Logo}}"></li>
+              <a href="#!Quiz/{{sub.Id}}/{{sub.Name}}" style="color:white ; text-decoration:none;"><button class="btn btn-primary">Làm Bài</button></a>
+            </ul>
+            <div class="card-footer">
+              {{sub.Name}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="pagination d-flex justify-content-center">
+        <li class="page-item"><a class="page-link" ng-click="first()"><<</a></li>
+        <li class="page-item"><a class="page-link" ng-click="back()"><</a></li>
+        <li class="page-item"><a class="page-link" ng-click="next()">></a></li>
+        <li class="page-item"><a class="page-link" ng-click="last()">>></a></li>
+      </ul>
+      <!-- <aside></aside> -->
+    </article>
+    <aside class="col-sm-3">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+               Danh Mục
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+            <div class="card-body">
+              <div class="list-group">
+                <div ng-repeat="sub in list_subject">
+                  <a href="#!Quiz/{{sub.Id}}/{{sub.Name}}" class="list-group-item">{{sub.Name}}</a>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Assingment-DuongDTPH18761</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <!-- Bootstrap CSS v5.2.0-beta1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <!-- doc file subject -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div class="container-fluid">
+    <!-- Header Trang -->
+    <header class="row">
+      <img src="images/banner2.png" class="col-sm-12" alt="">
+      <!-- <h3 ng-bind="student.username"> </h3> -->
+      <h5 class="d-flex justify-content-end" ng-hide="student == null">Xin Chào : {{student.email}}</h5>
+    </header>
+    <!-- Menu trang -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">FPT Polytechnic</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#!GioiThieu">Giới Thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!LienHe">Liên Hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!GopY">Góp ý</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!HoiDap">Hỏi Đáp</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Tài Khoản </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!DangKy" ng-hide="student != null">Đăng Ký</a></li>
+                <li><a class="dropdown-item" href="#!DangNhap" ng-hide="student != null">Đăng Nhập</a></li>
+                <li><a class="dropdown-item" href="#!QuenMatKhau" ng-hide="student != null">Quên Mật Khẩu</a></li>
+                <li><a class="dropdown-item" ng-click="logout()" ng-hide="student == null">Đăng Xuất</a></li>
+                <li><a class="dropdown-item" href="#!DoimatKhau" ng-hide="student == null">Đổi Mật Khẩu</a></li>
+                <li><a class="dropdown-item" href="#!CapNhatTaiKhoan" ng-hide="student == null">Cập Nhật Tài Khoản</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Content Trang -->
+
+    <main ng-view>
+
+
+    </main>
+    <!--  -->
+    <div style="padding-top:25px;"></div>
+    <footer style="background-color: #a7a7ab;">
+      <div class="container-fluid" id="footer">
+        <div class="container">
+            <footer>
+    <div class="row">
+        <div class="col-12 col-md-3 col-sm-12">
+            <a class="navbar-brand" href="#">
+                <span>
+                    <img src="" class="dark-logo" style="height:70px">
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-9  col-sm-12" style="margin-top:10px">
+            <h4>THÔNG TIN LIÊN HỆ</h4>
+            <p>
+                Trụ sở chính
+                Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+            </p>
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <h6>Cơ sở Hà Nội</h6>
+                        <p>Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+                        <p>(024) 7300 1955</p>
+                    </div>
+                    <div>
+                        <h6>Cơ sở Đà Nẵng</h6>
+                        <p>Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng</p>
+                        <p>(0236) 3710 999</p>
+                    </div>
+                    <div>
+                        <h6>Cơ sở Cần Thơ</h6>
+                        <p>Số 288, Nguyễn Văn Linh, phường An Khánh, quận Ninh Kiều, Tp. Cần Thơ.</p>
+                        <p>(0292) 7300 468</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <h6>Cơ sở Hồ Chí Minh</h6>
+                        <p>391A Nam Kỳ Khởi Nghĩa, Q. 3, TP. Hồ Chí Minh</p>
+                        <p>778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh</p>
+                        <p>Toà nhà Innovation, lô 24, Công viên phần mềm Quang Trung, Quận 12, Hồ Chí Minh</p>
+                        <p>(028) 3526 8799 – (028) 62523434</p>
+                    </div>
+                    <div>
+                        <h6>Cơ sở Tây Nguyên</h6>
+                        <p>Số 300/6 đường Hà Huy Tập, p. Tân An, TP. Buôn Ma Thuột, Đắk Lắk</p>
+                        <p>(0262) 355 5678</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        </div>
+    </div>
+    </footer>
+    <!--  -->
+    <script src="myJS/app.js"></script>
+    <script src="myJS/readSubject.js"></script>
+    <script src="myJS/login.js"></script>
+    <script src="myJS/forgotpasswordCtrl.js"></script>
+    <script src="myJS/creataccount.js"></script>
+    <script src="myJS/startquiz.js"></script>
+    <script src="myJS/updateAcc.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

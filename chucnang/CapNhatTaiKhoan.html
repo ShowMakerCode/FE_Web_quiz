@@ -1,0 +1,46 @@
+
+    <section>
+        <div class="d-flex justify-content-center">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Tài Khoản</label>
+                <h3>{{student.username}}</h3>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                    Mật Khẩu</label>
+                <input type="text" class="form-control" id="txtMatKhau" ng-model="student.password" />
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Họ và Tên</label>
+                <input type="text" class="form-control" id="txtHoVaTen" ng-model="student.fullname" />
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Gmail</label>
+                <input type="text" class="form-control" id="txtGmail" ng-model="student.email" />
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="option1" ng-checked="student.gender" />
+                <label class="form-check-label" for="inlineRadio1">Nam</label>
+            </div>
+            <div class="mb-3 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                    value="option2" ng-checked="!student.gender" />
+                <label class="form-check-label" for="inlineRadio2">Nữ</label>
+            </div>
+            <div class="mb-3">
+                <label for="birthday">Birthday:</label>
+                <input type="text" class="form-control" id="txtSinhNhat" name="birthday" ng-model="student.birthday" />
+            </div>
+          
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Học Phí</label>
+                <input type="text" class="form-control" id="txtHocPhi" ng-model="student.schoolfee"/>
+            </div>
+          
+            <button type="submit" class="btn btn-primary" ng-click="register()">Submit</button>
+        </form>
+    </div>
+    </section>
+    
