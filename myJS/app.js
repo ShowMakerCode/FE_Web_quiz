@@ -66,6 +66,7 @@ app.config(function ($routeProvider) {
       controller: "forgotpasswordCtrl"
     }).when("/DoimatKhau", {
       templateUrl: "chucnang/DoiMatKhau.html",
+      controller : "changepassCtrl"
     }).when("/CapNhatTaiKhoan", {
       templateUrl: "chucnang/CapNhatTaiKhoan.html",
       controller : "updateCtrl"

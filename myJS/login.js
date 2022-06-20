@@ -1,6 +1,6 @@
 app.controller("loginCrtl", function ($scope,$rootScope, $http,$location) {
     $scope.list_students = [];
-    $http.get('db/Students.js').then(function (reponse) {
+    $http.get('http://localhost:3000/studentAccounts').then(function (reponse) {
         $scope.list_students = reponse.data;
     })
    $scope.clickstuden = function(){
@@ -13,10 +13,8 @@ app.controller("loginCrtl", function ($scope,$rootScope, $http,$location) {
                 $location.path("/index.html");
                 return;
             }
-        }else{
-            swal("Sai Tài Khoản Hoặc Mật Khẩu !");
-            return;
         }
+        swal("Sai Tài Khoản Hoặc Mật Khẩu", "", "success");
       }
 }
 });

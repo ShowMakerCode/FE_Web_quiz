@@ -68,10 +68,6 @@ app.controller("startquizCtrl", function ($scope, $http, $routeParams, $rootScop
     $scope.options = $scope.questions[$scope.id + $scope.rand ].Answers;
     $scope.questions_list_true[$scope.id] = $scope.questions[$scope.id + $scope.rand ].AnswerId;
   }
-
-  // $scope.setOnNext = function(){
-  //   document.getElementById('nextques').style.visibility = 'visible';
-  // }
   $scope.nextQuestion = function () {
     if (
       target.getHours() === 0 &&

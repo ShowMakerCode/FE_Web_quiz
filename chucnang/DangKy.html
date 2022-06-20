@@ -2,14 +2,15 @@
     <section>
         <div class="d-flex justify-content-center">
         <form>
-            <div class="mb-3">
+            <div ng-init="studentR.gender='true';studentR.marks='0'"></div>
+            <div class="mb-3" ng-init>
                 <label for="exampleInputEmail1" class="form-label">Tài Khoản</label>
-                <input type="text" class="form-control" id="txtTaiKhoan" ng-model="username" />
+                <input type="text" class="form-control" id="txtTaiKhoan" ng-model="studentR.username" />
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">
                     Mật Khẩu</label>
-                <input type="password" class="form-control" id="txtMatKhau" ng-model="password" />
+                <input type="password" class="form-control" id="txtMatKhau" ng-model="studentR.password" />
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nhập Lại Mật Khẩu</label>
@@ -17,31 +18,30 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Họ và Tên</label>
-                <input type="text" class="form-control" id="txtHoVaTen" ng-model="name" />
+                <input type="text" class="form-control" id="txtHoVaTen" ng-model="studentR.fullname" />
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Gmail</label>
-                <input type="text" class="form-control" id="txtGmail" ng-model="email" />
+                <input type="text" class="form-control" id="txtGmail" ng-model="studentR.email" />
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1" checked="checked" ng-init="sex = Nam" />
+                    value="true" checked="checked" ng-model="studentR.gender" />
                 <label class="form-check-label" for="inlineRadio1">Nam</label>
             </div>
             <div class="mb-3 form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2" ng-init="sex = Nu" />
+                    value="false" ng-model="studentR.gender" />
                 <label class="form-check-label" for="inlineRadio2">Nữ</label>
             </div>
             <div class="mb-3">
                 <label for="birthday">Birthday:</label>
-                <input type="date" class="form-control" id="txtSinhNhat" name="birthday" ng-model="birthday" />
-               
+                <input class="form-control" type="date" name="begin" id="date" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" ng-model="studentR.birthday">
             </div>
           
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Học Phí</label>
-                <input type="text" class="form-control" id="txtHocPhi" ng-model="schoolfee"/>
+                <input type="text" class="form-control" id="txtHocPhi" ng-model="studentR.schoolfee"/>
             </div>
             <button type="submit" class="btn btn-primary" ng-click="register()">Submit</button>
         </form>

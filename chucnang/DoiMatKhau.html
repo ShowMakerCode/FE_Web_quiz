@@ -4,17 +4,17 @@
                 <h3>Tài Khoản : {{student.username}}</h3>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Mật Khẩu Cũ</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="oldpassword" disabled="disabled" ng-model="student.password">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Mật Khẩu Mới</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="password" class="form-control" id="passwordchange" ng-model="passwordchange">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Xác Nhận Mật Khẩu Mới</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="password" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" ng-click="Changpass()">Submit</button>
             </form>
         </div>
     </section>

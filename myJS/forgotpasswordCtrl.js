@@ -1,7 +1,7 @@
 app.controller("forgotpasswordCtrl", function ($scope, $http,$location) {
     $scope.student = {};
     $scope.list_students = [];
-    $http.get('db/Students.js').then(function (reponse) {
+    $http.get('http://localhost:3000/studentAccounts').then(function (reponse) {
         $scope.list_students = reponse.data;
     })
    $scope.getPass = function(){

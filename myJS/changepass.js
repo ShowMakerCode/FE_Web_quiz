@@ -1,11 +1,13 @@
-app.controller("updateCtrl", function ($location, $scope, $http,$rootScope) {
+app.controller("changepassCtrl", function ($location, $scope, $http,$rootScope) {
+    $scope.oldpass = $rootScope.student.password;
     $scope.studentR = $rootScope.student;
-    $scope.studentR.username = $rootScope.student.username;
-    $scope.Update = function() {
-        $scope.studentR.birthday =document.getElementById("date").value;
-        console.log($rootScope.student.username)
-        console.log(document.getElementById("date").value)
-      let req = {
+    $scope.Changpass = function() {
+        $scope.studentR.password = document.getElementById("passwordchange").value;
+        if($scope.studentR.password == $scope.oldpass){
+            swal("Mật Khẩu Giống Mật Khẩu Cũ!", "Vui Lòng Không Nhập Trùng", "warning");
+            return;
+        }
+          let req = {
         method: "PUT",
         url: "http://localhost:3000/studentAccounts/"+$rootScope.student.id,
         headers: {
@@ -15,12 +17,12 @@ app.controller("updateCtrl", function ($location, $scope, $http,$rootScope) {
       };
       $http(req).then(
         function () {
-          $scope.repassword = "";
           swal("Thành Công !", "Quay Lại Trang Chủ", "success");
           $location.path("/index.html");
         },
         function () {
           swal("Thất Bại !", "Quay Lại Trang Chủ", "error");
+          return;
         }
       );
     };
